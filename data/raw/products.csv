@@ -1,51 +1,51 @@
 product_id,title,description,category,brand,price,rating,created_date
-P001,HP Smartphone,Professional-grade Smartphone with cutting-edge features and excellent performance.,Electronics,HP,780.35,3.8,2025-06-03
-P002,Hydro Flask Yoga Mat,High-performance Yoga Mat from Hydro Flask designed for active lifestyles.,Sports & Outdoors,Hydro Flask,199.85,4.3,2025-04-05
-P003,H&M T-Shirt Premium,Fashion-forward T-Shirt featuring contemporary design and excellent fit.,Clothing,H&M,36.26,4.3,2025-04-04
-P004,Penguin Self-Help Max,Authoritative Self-Help by leading experts in the field.,Books,Penguin,109.13,4.6,2025-02-01
-P005,Ninja Microwave Ultra,Essential Microwave from Ninja designed to make your daily tasks easier.,Home & Kitchen,Ninja,40.95,4.0,2025-06-08
-P006,Lonely Planet Non-Fiction Elite,Informative Non-Fiction featuring clear explanations and practical examples.,Books,Lonely Planet,35.68,4.0,2025-07-03
-P007,McGraw Hill Non-Fiction,Informative Non-Fiction featuring clear explanations and practical examples.,Books,McGraw Hill,52.59,3.2,2024-09-07
-P008,Patagonia Tent Pro,Durable Tent built to withstand challenging conditions and intensive use.,Sports & Outdoors,Patagonia,360.11,4.6,2025-02-27
-P009,Samsung Headphones,Samsung Headphones with state-of-the-art technology and user-friendly interface.,Electronics,Samsung,1243.11,4.0,2024-09-03
-P010,Hamilton Beach Microwave,Innovative Microwave featuring modern design and practical functionality.,Home & Kitchen,Hamilton Beach,308.93,3.9,2024-07-31
-P011,LG Tablet,LG Tablet with state-of-the-art technology and user-friendly interface.,Electronics,LG,939.34,3.9,2025-03-09
-P012,Coleman Bicycle Deluxe,High-performance Bicycle from Coleman designed for active lifestyles.,Sports & Outdoors,Coleman,624.37,4.4,2025-03-30
-P013,Canon Camera,Professional-grade Camera with cutting-edge features and excellent performance.,Electronics,Canon,1205.21,4.2,2024-10-08
-P014,Breville Vacuum,"Breville Vacuum combining efficiency, style, and user convenience.",Home & Kitchen,Breville,157.16,4.0,2025-05-13
-P015,Ninja Microwave Elite,Innovative Microwave featuring modern design and practical functionality.,Home & Kitchen,Ninja,75.41,4.0,2024-09-29
-P016,Lonely Planet Travel Guide,Well-researched Travel Guide providing comprehensive information and expert guidance.,Books,Lonely Planet,23.67,4.6,2024-11-07
-P017,Penguin Non-Fiction Max,Well-researched Non-Fiction providing comprehensive information and expert guidance.,Books,Penguin,105.79,3.8,2024-08-11
-P018,McGraw Hill Non-Fiction,Authoritative Non-Fiction by leading experts in the field.,Books,McGraw Hill,79.32,4.1,2024-10-28
-P019,Cuisinart Coffee Maker,Innovative Coffee Maker featuring modern design and practical functionality.,Home & Kitchen,Cuisinart,51.65,4.1,2024-08-31
-P020,IKEA Blender,"IKEA Blender combining efficiency, style, and user convenience.",Home & Kitchen,IKEA,538.45,4.4,2025-07-24
-P021,Cuisinart Microwave Ultra,Professional-quality Microwave with durable construction and reliable performance.,Home & Kitchen,Cuisinart,266.58,5.0,2025-05-08
-P022,KitchenAid Microwave,"KitchenAid Microwave combining efficiency, style, and user convenience.",Home & Kitchen,KitchenAid,168.26,4.7,2025-07-16
-P023,HP Camera,Professional-grade Camera with cutting-edge features and excellent performance.,Electronics,HP,1940.69,4.3,2024-10-08
-P024,Bose Laptop Deluxe,Professional-grade Laptop with cutting-edge features and excellent performance.,Electronics,Bose,1847.65,4.6,2025-05-21
-P025,National Geographic Textbook,Authoritative Textbook by leading experts in the field.,Books,National Geographic,22.39,3.8,2025-04-08
-P026,The North Face Bicycle,Professional-grade Bicycle offering superior performance and reliability.,Sports & Outdoors,The North Face,336.55,3.6,2024-12-13
-P027,Adidas Fitness Tracker,High-performance Fitness Tracker from Adidas designed for active lifestyles.,Sports & Outdoors,Adidas,997.05,3.7,2025-02-02
-P028,LG Headphones,High-quality Headphones from LG featuring advanced technology and sleek design.,Electronics,LG,1108.26,3.8,2025-03-30
-P029,Dell Smartphone,Professional-grade Smartphone with cutting-edge features and excellent performance.,Electronics,Dell,324.8,4.4,2025-03-05
-P030,Springer Biography Elite,Authoritative Biography by leading experts in the field.,Books,Springer,112.06,4.6,2025-03-23
-P031,O'Reilly Travel Guide,Authoritative Travel Guide by leading experts in the field.,Books,O'Reilly,117.98,4.1,2025-01-25
-P032,Wiley Travel Guide Pro,Engaging Travel Guide from Wiley offering valuable insights and knowledge.,Books,Wiley,26.22,4.0,2025-06-24
-P033,Random House Cookbook,Well-researched Cookbook providing comprehensive information and expert guidance.,Books,Random House,130.83,3.6,2024-10-24
-P034,McGraw Hill Textbook,Authoritative Textbook by leading experts in the field.,Books,McGraw Hill,18.9,4.6,2025-03-20
-P035,Samsung Monitor,High-quality Monitor from Samsung featuring advanced technology and sleek design.,Electronics,Samsung,656.42,4.7,2025-06-08
-P036,Uniqlo Dress,High-quality Dress made with premium materials and modern design.,Clothing,Uniqlo,198.52,3.8,2025-01-01
-P037,Canon Tablet,Canon Tablet with state-of-the-art technology and user-friendly interface.,Electronics,Canon,1780.06,3.8,2025-03-12
-P038,McGraw Hill Self-Help,Authoritative Self-Help by leading experts in the field.,Books,McGraw Hill,109.85,4.2,2025-05-07
-P039,H&M Jacket Elite,"Stylish and comfortable Jacket from H&M, perfect for everyday wear.",Clothing,H&M,233.02,4.8,2025-02-15
-P040,Bose Smartphone,Professional-grade Smartphone with cutting-edge features and excellent performance.,Electronics,Bose,1012.9,4.3,2025-06-26
-P041,Under Armour Yoga Mat,High-performance Yoga Mat from Under Armour designed for active lifestyles.,Sports & Outdoors,Under Armour,634.44,4.0,2024-08-14
-P042,Adidas Pants Elite,High-quality Pants made with premium materials and modern design.,Clothing,Adidas,50.21,4.2,2024-10-02
-P043,Adidas Running Shoes,Professional-grade Running Shoes offering superior performance and reliability.,Sports & Outdoors,Adidas,52.24,3.6,2025-03-14
-P044,H&M Sweater,High-quality Sweater made with premium materials and modern design.,Clothing,H&M,162.4,4.6,2024-08-16
-P045,Hamilton Beach Furniture Pro,Essential Furniture from Hamilton Beach designed to make your daily tasks easier.,Home & Kitchen,Hamilton Beach,728.36,4.0,2024-12-03
-P046,Adidas Yoga Mat,Professional-grade Yoga Mat offering superior performance and reliability.,Sports & Outdoors,Adidas,910.33,3.6,2025-05-19
-P047,Ninja Blender,Professional-quality Blender with durable construction and reliable performance.,Home & Kitchen,Ninja,202.32,4.1,2024-12-13
-P048,Nike Backpack,Professional-grade Backpack offering superior performance and reliability.,Sports & Outdoors,Nike,206.05,4.0,2024-08-20
-P049,HP Tablet,High-quality Tablet from HP featuring advanced technology and sleek design.,Electronics,HP,1862.91,4.4,2024-10-15
-P050,Levi's Jacket,"Trendy Jacket by Levi's combining style, comfort, and durability.",Clothing,Levi's,264.01,4.7,2025-04-12
+P001,HP Smartphone,Professional-grade Smartphone with cutting-edge features and excellent performance.,Electronics,HP,780.35,3.8,2025-06-04
+P002,Hydro Flask Yoga Mat,High-performance Yoga Mat from Hydro Flask designed for active lifestyles.,Sports & Outdoors,Hydro Flask,199.85,4.3,2025-04-06
+P003,H&M T-Shirt Premium,Fashion-forward T-Shirt featuring contemporary design and excellent fit.,Clothing,H&M,36.26,4.3,2025-04-05
+P004,Penguin Self-Help Max,Authoritative Self-Help by leading experts in the field.,Books,Penguin,109.13,4.6,2025-02-02
+P005,Ninja Microwave Ultra,Essential Microwave from Ninja designed to make your daily tasks easier.,Home & Kitchen,Ninja,40.95,4.0,2025-06-09
+P006,Lonely Planet Non-Fiction Elite,Informative Non-Fiction featuring clear explanations and practical examples.,Books,Lonely Planet,35.68,4.0,2025-07-04
+P007,McGraw Hill Non-Fiction,Informative Non-Fiction featuring clear explanations and practical examples.,Books,McGraw Hill,52.59,3.2,2024-09-08
+P008,Patagonia Tent Pro,Durable Tent built to withstand challenging conditions and intensive use.,Sports & Outdoors,Patagonia,360.11,4.6,2025-02-28
+P009,Samsung Headphones,Samsung Headphones with state-of-the-art technology and user-friendly interface.,Electronics,Samsung,1243.11,4.0,2024-09-04
+P010,Hamilton Beach Microwave,Innovative Microwave featuring modern design and practical functionality.,Home & Kitchen,Hamilton Beach,308.93,3.9,2024-08-01
+P011,LG Tablet,LG Tablet with state-of-the-art technology and user-friendly interface.,Electronics,LG,939.34,3.9,2025-03-10
+P012,Coleman Bicycle Deluxe,High-performance Bicycle from Coleman designed for active lifestyles.,Sports & Outdoors,Coleman,624.37,4.4,2025-03-31
+P013,Canon Camera,Professional-grade Camera with cutting-edge features and excellent performance.,Electronics,Canon,1205.21,4.2,2024-10-09
+P014,Breville Vacuum,"Breville Vacuum combining efficiency, style, and user convenience.",Home & Kitchen,Breville,157.16,4.0,2025-05-14
+P015,Ninja Microwave Elite,Innovative Microwave featuring modern design and practical functionality.,Home & Kitchen,Ninja,75.41,4.0,2024-09-30
+P016,Lonely Planet Travel Guide,Well-researched Travel Guide providing comprehensive information and expert guidance.,Books,Lonely Planet,23.67,4.6,2024-11-08
+P017,Penguin Non-Fiction Max,Well-researched Non-Fiction providing comprehensive information and expert guidance.,Books,Penguin,105.79,3.8,2024-08-12
+P018,McGraw Hill Non-Fiction,Authoritative Non-Fiction by leading experts in the field.,Books,McGraw Hill,79.32,4.1,2024-10-29
+P019,Cuisinart Coffee Maker,Innovative Coffee Maker featuring modern design and practical functionality.,Home & Kitchen,Cuisinart,51.65,4.1,2024-09-01
+P020,IKEA Blender,"IKEA Blender combining efficiency, style, and user convenience.",Home & Kitchen,IKEA,538.45,4.4,2025-07-25
+P021,Cuisinart Microwave Ultra,Professional-quality Microwave with durable construction and reliable performance.,Home & Kitchen,Cuisinart,266.58,5.0,2025-05-09
+P022,KitchenAid Microwave,"KitchenAid Microwave combining efficiency, style, and user convenience.",Home & Kitchen,KitchenAid,168.26,4.7,2025-07-17
+P023,HP Camera,Professional-grade Camera with cutting-edge features and excellent performance.,Electronics,HP,1940.69,4.3,2024-10-09
+P024,Bose Laptop Deluxe,Professional-grade Laptop with cutting-edge features and excellent performance.,Electronics,Bose,1847.65,4.6,2025-05-22
+P025,National Geographic Textbook,Authoritative Textbook by leading experts in the field.,Books,National Geographic,22.39,3.8,2025-04-09
+P026,The North Face Bicycle,Professional-grade Bicycle offering superior performance and reliability.,Sports & Outdoors,The North Face,336.55,3.6,2024-12-14
+P027,Adidas Fitness Tracker,High-performance Fitness Tracker from Adidas designed for active lifestyles.,Sports & Outdoors,Adidas,997.05,3.7,2025-02-03
+P028,LG Headphones,High-quality Headphones from LG featuring advanced technology and sleek design.,Electronics,LG,1108.26,3.8,2025-03-31
+P029,Dell Smartphone,Professional-grade Smartphone with cutting-edge features and excellent performance.,Electronics,Dell,324.8,4.4,2025-03-06
+P030,Springer Biography Elite,Authoritative Biography by leading experts in the field.,Books,Springer,112.06,4.6,2025-03-24
+P031,O'Reilly Travel Guide,Authoritative Travel Guide by leading experts in the field.,Books,O'Reilly,117.98,4.1,2025-01-26
+P032,Wiley Travel Guide Pro,Engaging Travel Guide from Wiley offering valuable insights and knowledge.,Books,Wiley,26.22,4.0,2025-06-25
+P033,Random House Cookbook,Well-researched Cookbook providing comprehensive information and expert guidance.,Books,Random House,130.83,3.6,2024-10-25
+P034,McGraw Hill Textbook,Authoritative Textbook by leading experts in the field.,Books,McGraw Hill,18.9,4.6,2025-03-21
+P035,Samsung Monitor,High-quality Monitor from Samsung featuring advanced technology and sleek design.,Electronics,Samsung,656.42,4.7,2025-06-09
+P036,Uniqlo Dress,High-quality Dress made with premium materials and modern design.,Clothing,Uniqlo,198.52,3.8,2025-01-02
+P037,Canon Tablet,Canon Tablet with state-of-the-art technology and user-friendly interface.,Electronics,Canon,1780.06,3.8,2025-03-13
+P038,McGraw Hill Self-Help,Authoritative Self-Help by leading experts in the field.,Books,McGraw Hill,109.85,4.2,2025-05-08
+P039,H&M Jacket Elite,"Stylish and comfortable Jacket from H&M, perfect for everyday wear.",Clothing,H&M,233.02,4.8,2025-02-16
+P040,Bose Smartphone,Professional-grade Smartphone with cutting-edge features and excellent performance.,Electronics,Bose,1012.9,4.3,2025-06-27
+P041,Under Armour Yoga Mat,High-performance Yoga Mat from Under Armour designed for active lifestyles.,Sports & Outdoors,Under Armour,634.44,4.0,2024-08-15
+P042,Adidas Pants Elite,High-quality Pants made with premium materials and modern design.,Clothing,Adidas,50.21,4.2,2024-10-03
+P043,Adidas Running Shoes,Professional-grade Running Shoes offering superior performance and reliability.,Sports & Outdoors,Adidas,52.24,3.6,2025-03-15
+P044,H&M Sweater,High-quality Sweater made with premium materials and modern design.,Clothing,H&M,162.4,4.6,2024-08-17
+P045,Hamilton Beach Furniture Pro,Essential Furniture from Hamilton Beach designed to make your daily tasks easier.,Home & Kitchen,Hamilton Beach,728.36,4.0,2024-12-04
+P046,Adidas Yoga Mat,Professional-grade Yoga Mat offering superior performance and reliability.,Sports & Outdoors,Adidas,910.33,3.6,2025-05-20
+P047,Ninja Blender,Professional-quality Blender with durable construction and reliable performance.,Home & Kitchen,Ninja,202.32,4.1,2024-12-14
+P048,Nike Backpack,Professional-grade Backpack offering superior performance and reliability.,Sports & Outdoors,Nike,206.05,4.0,2024-08-21
+P049,HP Tablet,High-quality Tablet from HP featuring advanced technology and sleek design.,Electronics,HP,1862.91,4.4,2024-10-16
+P050,Levi's Jacket,"Trendy Jacket by Levi's combining style, comfort, and durability.",Clothing,Levi's,264.01,4.7,2025-04-13

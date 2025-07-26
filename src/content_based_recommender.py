@@ -205,6 +205,13 @@ class ContentBasedRecommender:
         """Get list of all products for UI dropdown"""
         return self.products_df[['product_id', 'title', 'category', 'price']].to_dict('records')
     
+    def get_product_info(self, product_id):
+        """Get detailed information for a specific product"""
+        product_info = self.products_df[self.products_df['product_id'] == product_id]
+        if product_info.empty:
+            return None
+        return product_info.iloc[0].to_dict()
+    
     def get_categories(self):
         """Get list of all categories"""
         return sorted(self.products_df['category'].unique().tolist())
@@ -247,7 +254,7 @@ class ContentBasedRecommender:
         with open(filepath, 'wb') as f:
             pickle.dump(model_data, f)
         
-        self.logger.info(f"💾 Content-based model saved to {filepath}")
+        self.logger.info(f"Content-based model saved to {filepath}")
     
     def load_model(self, filepath):
         """Load a trained model"""
@@ -261,7 +268,7 @@ class ContentBasedRecommender:
         self.product_to_index = model_data['product_to_index']
         self.index_to_product = model_data['index_to_product']
         
-        self.logger.info(f"📁 Model loaded from {filepath}")
+        self.logger.info(f"Model loaded from {filepath}")
 
 if __name__ == "__main__":
     # Test the content-based recommender
@@ -281,12 +288,12 @@ if __name__ == "__main__":
     sample_product = products_df.iloc[0]['product_id']
     recommendations = recommender.get_recommendations(sample_product, top_k=5)
     
-    print(f"\n🔍 Recommendations for product {sample_product}:")
+    print(f"\nRecommendations for product {sample_product}:")
     for i, rec in enumerate(recommendations, 1):
         print(f"{i}. {rec['title']} (Score: {rec['similarity_score']:.3f})")
     
     # Test feature importance
     features = recommender.get_feature_importance(sample_product, top_features=5)
-    print(f"\n📊 Important features for {sample_product}:")
+    print(f"\nImportant features for {sample_product}:")
     for feature in features:
         print(f"   {feature['feature']}: {feature['score']:.3f}")

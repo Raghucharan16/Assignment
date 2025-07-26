@@ -180,6 +180,11 @@ class CollaborativeRecommender:
             List of recommended products with predicted ratings
         """
         try:
+            # Check if model is properly initialized
+            if not hasattr(self, 'W') or not hasattr(self, 'H') or self.W is None or self.H is None:
+                self.logger.error("Model not properly initialized")
+                return self._get_popular_products(top_k)
+            
             if user_id not in self.user_to_idx:
                 # Cold start: return popular products
                 return self._get_popular_products(top_k)
@@ -196,8 +201,9 @@ class CollaborativeRecommender:
                 product_id = self.idx_to_item[item_idx]
                 
                 # Skip if already rated and exclude_rated is True
-                if exclude_rated and self.user_item_matrix[user_idx, item_idx] > 0:
-                    continue
+                if exclude_rated and hasattr(self, 'user_item_matrix') and self.user_item_matrix is not None:
+                    if self.user_item_matrix[user_idx, item_idx] > 0:
+                        continue
                 
                 # Clip prediction to valid range
                 pred_clipped = np.clip(pred, 1.0, 5.0)
@@ -241,32 +247,39 @@ class CollaborativeRecommender:
     
     def _get_popular_products(self, top_k):
         """Get popular products for cold start scenarios"""
-        if self.products_df is not None:
-            # Sort by rating and return top products
-            popular = self.products_df.nlargest(top_k, 'rating')
-            recommendations = []
-            for _, row in popular.iterrows():
-                rec = {
-                    'product_id': row['product_id'],
-                    'predicted_rating': row['rating'],
-                    'title': row['title'],
-                    'category': row['category'],
-                    'brand': row['brand'],
-                    'price': row['price'],
-                    'rating': row['rating'],
-                    'description': row['description']
-                }
-                recommendations.append(rec)
-            return recommendations
-        else:
-            # Fallback: use product mean ratings
-            sorted_products = sorted(
-                self.product_mean_ratings.items(), 
-                key=lambda x: x[1], 
-                reverse=True
-            )
-            return [{'product_id': pid, 'predicted_rating': rating} 
-                   for pid, rating in sorted_products[:top_k]]
+        try:
+            if self.products_df is not None and not self.products_df.empty:
+                # Sort by rating and return top products
+                popular = self.products_df.nlargest(top_k, 'rating')
+                recommendations = []
+                for _, row in popular.iterrows():
+                    rec = {
+                        'product_id': row['product_id'],
+                        'predicted_rating': row['rating'],
+                        'title': row['title'],
+                        'category': row['category'],
+                        'brand': row['brand'],
+                        'price': row['price'],
+                        'rating': row['rating'],
+                        'description': row['description']
+                    }
+                    recommendations.append(rec)
+                return recommendations
+            elif hasattr(self, 'product_mean_ratings') and self.product_mean_ratings:
+                # Fallback: use product mean ratings
+                sorted_products = sorted(
+                    self.product_mean_ratings.items(), 
+                    key=lambda x: x[1], 
+                    reverse=True
+                )
+                return [{'product_id': pid, 'predicted_rating': rating} 
+                       for pid, rating in sorted_products[:top_k]]
+            else:
+                # Last resort: return empty list
+                return []
+        except Exception as e:
+            self.logger.error(f"Error getting popular products: {str(e)}")
+            return []
     
     def get_user_similarity(self, user_id1, user_id2):
         """Calculate similarity between two users based on their latent factors"""
@@ -318,13 +331,22 @@ class CollaborativeRecommender:
     
     def get_user_profile(self, user_id):
         """Get user's rating profile and preferences"""
+        # Check if required data is available
+        if self.ratings_df is None:
+            return {
+                'user_id': user_id,
+                'total_ratings': 0,
+                'average_rating': self.global_mean if hasattr(self, 'global_mean') and self.global_mean else 3.0,
+                'status': 'Data Not Available'
+            }
+        
         user_ratings = self.ratings_df[self.ratings_df['user_id'] == user_id]
         
         if user_ratings.empty:
             return {
                 'user_id': user_id,
                 'total_ratings': 0,
-                'average_rating': self.global_mean,
+                'average_rating': self.global_mean if hasattr(self, 'global_mean') and self.global_mean else 3.0,
                 'status': 'New User'
             }
         
@@ -336,18 +358,25 @@ class CollaborativeRecommender:
         }
         
         # Add rating distribution
-        rating_dist = user_ratings['rating'].value_counts().sort_index()
-        profile['rating_distribution'] = rating_dist.to_dict()
+        try:
+            rating_dist = user_ratings['rating'].value_counts().sort_index()
+            profile['rating_distribution'] = rating_dist.to_dict()
+        except Exception:
+            profile['rating_distribution'] = {}
         
         # Add category preferences if product data available
-        if self.products_df is not None:
-            user_products = user_ratings.merge(
-                self.products_df[['product_id', 'category']], 
-                on='product_id'
-            )
-            if not user_products.empty:
-                category_preferences = user_products.groupby('category')['rating'].mean().sort_values(ascending=False)
-                profile['category_preferences'] = category_preferences.to_dict()
+        try:
+            if self.products_df is not None and not self.products_df.empty:
+                user_products = user_ratings.merge(
+                    self.products_df[['product_id', 'category']], 
+                    on='product_id'
+                )
+                if not user_products.empty:
+                    category_preferences = user_products.groupby('category')['rating'].mean().sort_values(ascending=False)
+                    profile['category_preferences'] = category_preferences.to_dict()
+        except Exception:
+            # If category preferences can't be computed, skip it
+            pass
         
         return profile
     
@@ -409,46 +438,41 @@ class CollaborativeRecommender:
         return recommendations
     
     def save_model(self, filepath):
-        """Save the trained model"""
-        model_data = {
-            'W': self.W,
-            'H': self.H,
-            'user_to_idx': self.user_to_idx,
-            'item_to_idx': self.item_to_idx,
-            'idx_to_user': self.idx_to_user,
-            'idx_to_item': self.idx_to_item,
-            'user_mean_ratings': self.user_mean_ratings,
-            'product_mean_ratings': self.product_mean_ratings,
-            'global_mean': self.global_mean,
-            'n_factors': self.n_factors,
-            'ratings_df': self.ratings_df,
-            'products_df': self.products_df
-        }
-        
+        """Save the trained model as complete object"""
+        # Save the complete object
         with open(filepath, 'wb') as f:
-            pickle.dump(model_data, f)
+            pickle.dump(self, f)
         
         self.logger.info(f"Collaborative filtering model saved to {filepath}")
     
-    def load_model(self, filepath):
+    @classmethod
+    def load_model(cls, filepath):
         """Load a trained model"""
         with open(filepath, 'rb') as f:
-            model_data = pickle.load(f)
+            model = pickle.load(f)
         
-        self.W = model_data['W']
-        self.H = model_data['H']
-        self.user_to_idx = model_data['user_to_idx']
-        self.item_to_idx = model_data['item_to_idx']
-        self.idx_to_user = model_data['idx_to_user']
-        self.idx_to_item = model_data['idx_to_item']
-        self.user_mean_ratings = model_data['user_mean_ratings']
-        self.product_mean_ratings = model_data['product_mean_ratings']
-        self.global_mean = model_data['global_mean']
-        self.n_factors = model_data['n_factors']
-        self.ratings_df = model_data['ratings_df']
-        self.products_df = model_data['products_df']
-        
-        self.logger.info(f"Collaborative filtering model loaded from {filepath}")
+        # If it's a dictionary (old format), create new instance and load data
+        if isinstance(model, dict):
+            new_model = cls()
+            new_model.W = model.get('W')
+            new_model.H = model.get('H') 
+            new_model.user_to_idx = model.get('user_to_idx', {})
+            new_model.item_to_idx = model.get('item_to_idx', {})
+            new_model.idx_to_user = model.get('idx_to_user', {})
+            new_model.idx_to_item = model.get('idx_to_item', {})
+            new_model.user_mean_ratings = model.get('user_mean_ratings', {})
+            new_model.product_mean_ratings = model.get('product_mean_ratings', {})
+            new_model.global_mean = model.get('global_mean', 3.0)
+            new_model.n_factors = model.get('n_factors', 50)
+            new_model.ratings_df = model.get('ratings_df')
+            new_model.products_df = model.get('products_df')
+            
+            new_model.logger.info(f"Collaborative filtering model loaded from {filepath} (old format)")
+            return new_model
+        else:
+            # New format - return the loaded object directly
+            model.logger.info(f"Collaborative filtering model loaded from {filepath}")
+            return model
 
 if __name__ == "__main__":
     # Test the collaborative filtering recommender

@@ -202,6 +202,5 @@ python -m pytest tests/ -v
 
 ---
 
-**Built with ❤️ for Hirebie AI ML Internship Assignment**
 
 *This project demonstrates advanced recommendation system concepts including TF-IDF vectorization, cosine similarity, matrix factorization, and modern web UI development.*

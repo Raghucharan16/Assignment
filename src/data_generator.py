@@ -171,13 +171,13 @@ class ProductDataGenerator:
     
     def generate_datasets(self):
         """Generate both products and ratings datasets"""
-        print("🏭 Generating product dataset...")
+        print("Generating product dataset...")
         products_df = self.generate_products_dataset()
         
-        print("⭐ Generating ratings dataset...")
+        print("Generating ratings dataset...")
         ratings_df = self.generate_ratings_dataset(products_df)
         
-        print(f"✅ Generated {len(products_df)} products and {len(ratings_df)} ratings")
+        print(f"Generated {len(products_df)} products and {len(ratings_df)} ratings")
         
         return products_df, ratings_df
     
@@ -213,8 +213,8 @@ if __name__ == "__main__":
     generator.save_datasets(products_df, ratings_df)
     
     # Display sample data
-    print("\n🔍 Sample Products:")
+    print("\nSample Products:")
     print(products_df.head())
     
-    print("\n⭐ Sample Ratings:")
+    print("\nSample Ratings:")
     print(ratings_df.head())
