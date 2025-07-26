@@ -1,0 +1,59 @@
+# Configuration file for Product Recommendation System
+
+# Data settings
+data:
+  raw_data_path: "data/raw/"
+  processed_data_path: "data/processed/"
+  n_products: 50
+  n_users: 100
+  n_ratings: 500
+  random_state: 42
+
+# Content-Based Filtering settings
+content_based:
+  max_features: 5000
+  ngram_range: [1, 2]
+  stop_words: "english"
+  use_tfidf: true
+  similarity_metric: "cosine"
+
+# Collaborative Filtering settings
+collaborative_filtering:
+  algorithm: "SVD"
+  n_factors: 50
+  n_epochs: 20
+  learning_rate: 0.005
+  regularization: 0.02
+  cross_validation_folds: 3
+
+# Recommendation settings
+recommendations:
+  default_top_k: 5
+  max_recommendations: 20
+  min_similarity_threshold: 0.1
+  include_scores: true
+
+# Model settings
+models:
+  content_based_path: "models/content_based_model.pkl"
+  collaborative_path: "models/collaborative_model.pkl"
+  save_models: true
+
+# UI settings
+streamlit:
+  page_title: "Product Recommendation System"
+  page_icon: "🛍️"
+  layout: "wide"
+  theme: "light"
+
+# Evaluation settings
+evaluation:
+  test_size: 0.2
+  cross_validation: true
+  metrics: ["RMSE", "MAE", "Precision", "Recall"]
+
+# Logging settings
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/recommendation_system.log"

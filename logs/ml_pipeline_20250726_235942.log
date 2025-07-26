@@ -1,0 +1,4 @@
+2025-07-26 23:59:42,402 - __main__ - INFO - ==================================================
+2025-07-26 23:59:42,751 - src.content_based_recommender - INFO -    • Products: 50
+2025-07-26 23:59:42,751 - src.content_based_recommender - INFO -    • TF-IDF features: 487
+2025-07-26 23:59:42,755 - src.content_based_recommender - INFO -    • Similarity matrix shape: (50, 50)
